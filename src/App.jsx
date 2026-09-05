@@ -1,3 +1,45 @@
+import { useEffect,useState } from "react";
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import Navegacion from "./components/Navegacion";
+import Inicio from "./pags/Inicio";
+import Cursos from "./pags/Cursos";
+import Sinpagina from "./pags/Sinpagina";
+import Estecurso from "./pags/Estecurso"
+
+export default function App(){
+  return(/*4.03.55 - 4.47.0*/
+  <Router>
+    <Navegacion/>
+    <Routes>
+      <Route path="/" element={<Inicio/>} />
+      <Route path="prgprogx_cursos" element={<Cursos/>} />
+      <Route path="*" element={<Sinpagina/>}/>
+      <Route path="prgprogx_cursos/:id_curso" element={<Estecurso/>}/>
+    </Routes>
+  </Router>
+  )
+}
+
+
+
+/*Actividad04 29/08
+import { useState,useEffect } from "react";
+import { cerrarSesion,obtenerSesionActual,suscribirseASesion } from "./services/auth";
+import LoginPage from "./Loginpage.jsx";
+
+
+export default function App(){
+  const [lasesion,setLasesion]=useState([])
+  const [cargasesion,setCargasesion]=useState(true)
+  const [sesionerror,setSesionerror]=useState(null)
+  useEffect(()=>{
+    
+  })
+}
+*/
+
+
+/*TP3 21/08
 import axios from "axios"
 import { useState,useEffect } from "react"
 import Elpokeapi from "./components/conapi"
@@ -9,11 +51,7 @@ function App(){
     <Elpokeapi></Elpokeapi>
   )
 }
-export default App;
-
-
- 
-
+export default App;*/
 
 
 /*TP2 17/08
