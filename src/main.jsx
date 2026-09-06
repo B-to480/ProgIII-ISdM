@@ -5,8 +5,8 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
+
     <App />
-    </AuthProvider>
+
   </StrictMode>,
 )//authprovider no esta en la teoria, no funciona porque no hay explicacion de como se construye
