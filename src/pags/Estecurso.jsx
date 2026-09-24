@@ -33,7 +33,7 @@ export default function Estecurso() {
       <h3>Nivel: {curso.curso_nivel}    -   Profesor: {curso.curso_profe}</h3>
       <h3>Cupos reservados: {curso.curso_cupo} Cupos disponibles: {60-curso.curso_cupo}</h3>
       <p>{curso.descr_curso}</p>
-      <hr></hr>
+      <hr>  </hr>
       <Link to="/prgprogx_cursos">Volver</Link>
     </div>
   );

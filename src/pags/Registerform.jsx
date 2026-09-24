@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
+import { registrar } from "../services/auth";
+import { useState } from "react";
 
 
 
 export default function Nuevacuenta(){
+    const [errorDelServidor, setErrorDelServidor] = useState(null);
     const {register,handleSubmit,watch,
         formState:{errors,isSubmitting}}=useForm()
     
@@ -23,13 +26,13 @@ export default function Nuevacuenta(){
         <h3>Formulario de Registro:</h3>
         <form onSubmit={handleSubmit(manejarRegistro)}>
             <h4>Ingrese correo:</h4>
-            <input {...register("email", {required: "El email es obligatorio",
+            <input type="email" placeholder="mi.direccion@email.com" {...register("email", {required: "El email es obligatorio",
                 pattern: {value: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
                 message: "Escribí un email válido"
             }})}/>
             {errors.email && <p>{errors.email.message}</p>}
             <h4>Ingrese contraseña:</h4>
-            <input type="password" {...register("contrasena", {
+            <input type="password" placeholder="1contraseña9FUERTE" {...register("contrasena", {
                 required: "La contraseña es obligatoria",
                 pattern: {
                     value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/,
@@ -37,7 +40,7 @@ export default function Nuevacuenta(){
                 }
             })} />
             <h4>Repita la contraseña ingresada:</h4>
-            <input type="password"{...register("repetir", {
+            <input type="password" placeholder="Repite la contraseña"{...register("repetir", {
                 required: "Repetí la contraseña",validate: (valor) =>
                 valor === watch("contrasena") || "Las contraseñas no coinciden"
             })} />

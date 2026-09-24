@@ -1,4 +1,4 @@
-import { supabase } from "../supabaseClient";
+import { supabase } from "../misupabase";
 
 // ---------- REGISTRO ----------
 export async function registrar(email, contrasena) {

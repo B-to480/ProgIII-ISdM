@@ -7,7 +7,8 @@ import Sinpagina from "./pags/Sinpagina";
 import Estecurso from "./pags/Estecurso"
 import Nuevacuenta from "./pags/Registerform";
 import Entrarcuenta from "./pags/Loginform";
-import RutaPrivada from "./context/AuthContext";
+import RutaPrivada from "./components/RutaPrivada";
+import MostrarPublicaciones from "./Publicaciones"
 
 export default function App(){
   return(//4.03.55 - 4.47.00
@@ -20,6 +21,7 @@ export default function App(){
       <Route path="prgprogx_cursos/:id_curso" element={<Estecurso/>}/>
       <Route path="prgprogx_registro" element={<Nuevacuenta/>}/>
       <Route path="prgprogx_micuenta" element={<Entrarcuenta/>}/>
+      <Route path="Publicaciones" element={<MostrarPublicaciones/>}/>
     </Routes>
   </Router>
   )

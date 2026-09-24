@@ -22,8 +22,7 @@ export default function Enlistador() {
   useEffect(() => {
     cargarCursos();
   }, []);
-  {
-    /*
+  {/*otro metodo incompleto
 export default function Enlistador(){
     const [cursos,setCursos]=useState([])
     const [cargarndo,setCargando]=useState(true)
@@ -35,11 +34,10 @@ export default function Enlistador(){
             setCursos(data)
             .catch(elerror =>setError(elerror.message))
             .finally(()=>setCargando(false))
-        },[])*/
-  }
+        },[])*/}
 
   if (cargando)
-    return <h1>Estamos CARGANDO los Cursos, por favor, aguarde...</h1>;
+    return <h3>Estamos CARGANDO los Cursos, por favor, aguarde...</h3>;
   if (error) return <p>Surgio un error: {error}</p>;
   return (
     <div>
